@@ -1,6 +1,13 @@
+<?php if ($this->session->flashdata()) : ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Barang</strong> berhasil <?= $this->session->flashdata('namasession'); ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 <table class="table">
+    <a href="<?= base_url('barang/tambah'); ?>" class="btn btn-primary">Tambah</a>
     <?php foreach ($barang as $b) : ?>
-        <li><?= $b['nama']; ?></li>
+        <li><?= $b['nama']; ?><a href="<?= base_url(); ?>barang/hapus/<?= $b['id']; ?>" onclick="return confirm('Yakin?')">Hapus</a></li>
     <?php endforeach; ?>
     <thead>
         <tr>
