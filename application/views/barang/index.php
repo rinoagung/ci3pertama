@@ -4,36 +4,32 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif; ?>
-<table class="table">
-    <a href="<?= base_url('barang/tambah'); ?>" class="btn btn-primary">Tambah</a>
-    <?php foreach ($barang as $b) : ?>
-        <li><?= $b['nama']; ?><a href="<?= base_url(); ?>barang/hapus/<?= $b['id']; ?>" onclick="return confirm('Yakin?')">Hapus</a></li>
-    <?php endforeach; ?>
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
+<?php if (empty($barang)) : ?>
+    <div class="alert alert-info" role="alert">
+        Barang tidak ditemukan
+    </div>
+<?php else : ?>
+    <table class="table">
+        <a href="<?= base_url('barang/tambah'); ?>" class="btn btn-primary">Tambah</a>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama</th>
+                <th scope="col" class="text-center">Manage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($barang as $b) : ?>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><?= $b['nama']; ?></td>
+                    <td class="text-center">
+                        <a href="<?= base_url(); ?>barang/hapus/<?= $b['id']; ?>" style="display: inline-block; margin:10px" onclick="return confirm('Yakin?')">Hapus</a>
+                        <a href="<?= base_url(); ?>barang/detail/<?= $b['id']; ?>" style="display: inline-block; margin:10px">Detail</a>
+                        <a href="<?= base_url(); ?>barang/ubah/<?= $b['id']; ?>" style="display: inline-block; margin:10px">Ubah</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>
