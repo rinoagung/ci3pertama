@@ -21,7 +21,7 @@
         <tbody>
             <?php foreach ($barang as $b) : ?>
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row"><?= ++$start; ?></th>
                     <td><?= $b['nama']; ?></td>
                     <td class="text-center">
                         <a href="<?= base_url(); ?>barang/hapus/<?= $b['id']; ?>" style="display: inline-block; margin:10px" onclick="return confirm('Yakin?')">Hapus</a>
@@ -32,4 +32,5 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <?= $this->pagination->create_links(); ?>
 <?php endif; ?>
