@@ -32,5 +32,6 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <h5>Result: <?= $total_rows; ?></h5>
     <?= $this->pagination->create_links(); ?>
 <?php endif; ?>

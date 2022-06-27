@@ -26,8 +26,8 @@
                     </li>
                 </ul>
                 <form class="d-flex" action="" method="POST" role="search">
-                    <input class="form-control me-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" name="keyword" type="search" placeholder="Search" aria-label="Search" autocomplete="off" autofocus>
+                    <input class="btn btn-outline-success" type="submit" name="submit"></input>
                 </form>
             </div>
         </div>

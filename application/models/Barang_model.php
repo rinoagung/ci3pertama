@@ -5,8 +5,12 @@ class Barang_model extends CI_Model
     {
         return $this->db->get('barang')->result_array();
     }
-    public function getBarang($limit, $start)
+    public function getBarang($limit, $start, $keyword = null)
     {
+        if ($keyword) {
+            $this->db->like('nama', $keyword);
+            // $this->db->or_like('berat', $keyword);
+        }
         return $this->db->get('barang', $limit, $start)->result_array();
     }
     public function countAllBarang()
@@ -46,11 +50,11 @@ class Barang_model extends CI_Model
         $this->db->update('barang', $data);
     }
 
-    public function cariDataBarang()
-    {
-        $keyword = $this->input->post('keyword', true);
-        $this->db->like('nama', $keyword);
-        // $this->db->or_like('berat', $keyword);
-        return $this->db->get('barang')->result_array();
-    }
+    // public function cariDataBarang()
+    // {
+    //     $keyword = $this->input->post('keyword', true);
+    //     $this->db->like('nama', $keyword);
+    //     // $this->db->or_like('berat', $keyword);
+    //     return $this->db->get('barang')->result_array();
+    // }
 }
