@@ -37,6 +37,7 @@ class Barang extends CI_controller
         $data['start'] = $this->uri->segment(3);
         $data['barang'] = $this->barang->getBarang($config['per_page'], $data['start'], $data['keyword']);
         $this->load->view('partials/header');
+        $this->load->view('partials/nav');
         $this->load->view('barang/index', $data);
         $this->load->view('partials/footer');
     }
@@ -47,6 +48,7 @@ class Barang extends CI_controller
         $this->form_validation->set_rules('berat', 'Berat', 'required|numeric');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('partials/header');
+            $this->load->view('partials/nav');
             $this->load->view('barang/tambah', $data);
             $this->load->view('partials/footer');
         } else {
@@ -65,6 +67,7 @@ class Barang extends CI_controller
     {
         $data['barang'] = $this->Barang_model->getBarangById($id);
         $this->load->view('partials/header');
+        $this->load->view('partials/nav');
         $this->load->view('barang/detail', $data);
         $this->load->view('partials/footer');
     }
@@ -76,6 +79,7 @@ class Barang extends CI_controller
         $this->form_validation->set_rules('berat', 'Berat', 'required|numeric');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('partials/header');
+            $this->load->view('partials/nav');
             $this->load->view('barang/ubah', $data);
             $this->load->view('partials/footer');
         } else {
