@@ -1,4 +1,5 @@
 <div class="container mt-5">
+    <?= $this->session->flashdata('message'); ?>
     <div class="row mt-5">
         <div class="m-auto mt-5 col-10 col-md-8 col-lg-6 col-xl-4">
             <form>
