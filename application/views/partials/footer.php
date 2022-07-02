@@ -1,4 +1,4 @@
-<script src="<?= base_url('assets/css/bootstrap.min.js'); ?>" crossorigin="anonymous"></script>
+<script src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
 </body>
 
 </html>

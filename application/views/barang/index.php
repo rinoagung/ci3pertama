@@ -12,7 +12,9 @@
         </div>
     <?php else : ?>
         <table class="table">
-            <a href="<?= base_url('barang/tambah'); ?>" class="btn btn-primary">Tambah</a>
+            <?php if ($user['role_id'] == 1) : ?>
+                <a href="<?= base_url('barang/tambah'); ?>" class="btn btn-primary">Tambah</a>
+            <?php endif; ?>
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -26,9 +28,11 @@
                         <th scope="row"><?= ++$start; ?></th>
                         <td><?= $b['nama']; ?></td>
                         <td class="text-center">
-                            <a href="<?= base_url(); ?>barang/hapus/<?= $b['id']; ?>" style="display: inline-block; margin:10px" onclick="return confirm('Yakin?')">Hapus</a>
                             <a href="<?= base_url(); ?>barang/detail/<?= $b['id']; ?>" style="display: inline-block; margin:10px">Detail</a>
-                            <a href="<?= base_url(); ?>barang/ubah/<?= $b['id']; ?>" style="display: inline-block; margin:10px">Ubah</a>
+                            <?php if ($user['role_id'] == 1) : ?>
+                                <a href="<?= base_url(); ?>barang/hapus/<?= $b['id']; ?>" style="display: inline-block; margin:10px" onclick="return confirm('Yakin?')">Hapus</a>
+                                <a href="<?= base_url(); ?>barang/ubah/<?= $b['id']; ?>" style="display: inline-block; margin:10px">Ubah</a>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

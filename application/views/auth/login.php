@@ -5,7 +5,7 @@
             <form method="post" action="<?= base_url('auth'); ?>">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username">
+                    <input type="text" class="form-control" id="username" name="username" autofocus>
                     <div class="form-text text-danger"><?= form_error('username'); ?></div>
                 </div>
                 <div class="mb-3">
