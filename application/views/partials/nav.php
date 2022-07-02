@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('barang'); ?>">Barang</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                </li>
             </ul>
             <form class="d-flex" action="" method="POST" role="search">
                 <input class="form-control me-2" name="keyword" type="search" placeholder="Search" aria-label="Search" autocomplete="off" autofocus>

@@ -12,6 +12,9 @@ class Barang extends CI_controller
         // $data['barang'] = $this->Barang_model->getAllBarang();
         $this->load->model('Barang_model', 'barang');
 
+        // ambil data user
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+
         // PAGINATON
         $this->load->library('pagination');
 

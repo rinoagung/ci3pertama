@@ -1,4 +1,5 @@
 <div class="container">
+    <h3 class="mb-3 text-center">Welcome "<?= $user['name']; ?>"</h3>
     <?php if ($this->session->flashdata()) : ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Barang</strong> berhasil <?= $this->session->flashdata('namasession'); ?>

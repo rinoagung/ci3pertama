@@ -4,17 +4,17 @@
             <form method="post" action="<?= base_url('auth/registration'); ?>">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name" value="<?= set_value('name'); ?>">
+                    <input type="text" class="form-control" id="name" name="name" value="<?= set_value('name'); ?>" autofocus>
                     <div class="form-text text-danger"><?= form_error('name'); ?></div>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name="email" value="<?= set_value('email'); ?>">
+                    <input type="text" class="form-control" id="email" name="email" value="<?= set_value('email'); ?>">
                     <div class="form-text text-danger"><?= form_error('email'); ?></div>
                 </div>
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" value="<?= set_value('username'); ?>">
+                    <input type="text" class="form-control" id="username" name="username" value="<?= set_value('username'); ?>">
                     <div class="form-text text-danger"><?= form_error('username'); ?></div>
                 </div>
                 <div class="mb-3">
@@ -29,7 +29,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
-            <div id="emailHelp" class="form-text"><a href="<?= base_url('auth'); ?>">Back</a></div>
+            <div class="form-text"><a href="<?= base_url('auth'); ?>">Back</a></div>
         </div>
     </div>
 </div>
