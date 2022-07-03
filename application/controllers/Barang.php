@@ -103,6 +103,6 @@ class Barang extends CI_controller
     {
         return
             // ambil data user
-            $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+            $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
     }
 }
