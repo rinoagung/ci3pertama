@@ -10,6 +10,9 @@ class Auth extends CI_Controller
     }
     public function index()
     {
+        if ($this->session->userdata('username')) {
+            redirect('barang');
+        }
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($this->form_validation->run() == false) {
@@ -24,6 +27,9 @@ class Auth extends CI_Controller
 
     private function _login()
     {
+        if ($this->session->userdata('username')) {
+            redirect('barang');
+        }
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
@@ -60,6 +66,9 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+        if ($this->session->userdata('username')) {
+            redirect('barang');
+        }
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'The email has already taken'

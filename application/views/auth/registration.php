@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row mt-5">
         <div class="m-auto mt-5 col-10 col-md-8 col-lg-6 col-xl-4">
-            <form method="post" action="<?= base_url('auth/registration'); ?>">
+            <form method="post" action="<?= base_url('auth/registration'); ?>" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" value="<?= set_value('name'); ?>" autofocus>

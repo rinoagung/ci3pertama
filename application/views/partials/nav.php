@@ -14,6 +14,9 @@
                     <a class="nav-link" href="<?= base_url('barang'); ?>">Barang</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('user'); ?>">Account</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-danger" href="<?= base_url('auth/logout'); ?>">Logout</a>
                 </li>
             </ul>

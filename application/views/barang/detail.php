@@ -9,5 +9,5 @@
             <li class="list-group-item">Harga: <?= $barang['harga']; ?></li>
         </ul>
     </div>
-    <a href="<?= base_url('barang'); ?>" class="badge text-decoration-none text-bg-primary">Kembali</a>
+    <a href="<?= base_url('barang'); ?>" class="badge text-decoration-none text-bg-primary">Back</a>
 </div>
